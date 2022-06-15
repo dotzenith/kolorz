@@ -4,6 +4,7 @@ version = "0.1.0"
 description = "A fast, extensible, and kolorful python library to print colored output to the terminal"
 authors = ["dotzenith <contact@danshu.co>"]
 license = "MIT"
+readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.9"
