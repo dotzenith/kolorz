@@ -20,7 +20,7 @@
 
 ### ❖ Information 
 
-  kolorz is a simple, fast, and extensible python library to facilitate printing colors to the terminals that support true color  
+  kolorz is a simple, fast, and extensible python library to facilitate printing colors to terminals that support true color  
 
   <img src=".assets/kolorz.png" alt="kolorz">
 
@@ -44,13 +44,94 @@ pip3 install ./dist/kolorz-0.1.0.tar.gz
 
 ### ❖ Usage 
 
-- TODO
+Using the kolorz CLI endpoint to print out all available colorschemes:  
 
----
+```
+$ kolorz
+Supported colorschemes: 
 
-### ❖ About kolorz
+catppuccin latte
+catppuccin frappe
+catppuccin macchiato
+catppuccin mocha
+dracula
+nord
+gruvbox
+onedark
+tokyonight
+ayu
+palenight
+gogh
+```
 
-- TODO
+Using the kolorz python interface to print colored output:
+
+```python
+from kolorz import kolorz
+
+kl = kolorz()
+
+print(f"{kl.blue}This is some{kl.end} {kl.orange}output{kl.end}")
+```
+
+The following colors are available, but more can be added (more on that later):
+```
+red
+purple
+blue
+green
+orange
+yellow
+white
+```
+
+By default, the colorscheme is set to `catppuccin mocha` but that can be changed to any of the colorschemes listed by `kolorz`. For example:
+
+```python
+from kolorz import kolorz
+
+kl = kolorz("nord")
+
+print(f"{kl.blue}This is some{kl.end} {kl.orange}output{kl.end}")
+```
+
+Users can also define their own colorschemes:
+
+```python
+from kolorz import kolorz
+
+new_colors = {
+    "red": (210, 15, 57),
+    "purple": (136, 57, 239),
+    "blue": (30, 102, 245),
+    "green": (64, 160, 43),
+    "orange": (254, 100, 11),
+    "yellow": (223, 142, 29),
+    "white": (204, 208, 218),
+}
+
+kl = kolorz(custom=new_colors)
+
+print(f"{kl.blue}This is some{kl.end} {kl.orange}output{kl.end}")
+```
+
+> When adding a custom colorscheme, the user is not restricted to just seven colors. The user can define as many colors as they'd like in the dict structure
+
+Adding or overriding a color
+
+```python
+from kolorz import kolorz
+
+kl = kolorz()
+
+# Adding
+kl.set_color("rosewater", (245, 224, 220))
+
+# Overriding
+kl.set_color("blue", (137, 220, 235))
+
+print(f"{kl.rosewater}This is some{kl.end} {kl.blue}output{kl.end}")
+```
 
 ---
 
