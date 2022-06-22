@@ -22,7 +22,7 @@
 
   kolorz is a simple, fast, and extensible python library to facilitate printing colors to terminals that support true color  
 
-  <img src=".assets/kolorz.png" alt="kolorz">
+  <img src="https://github.com/dotzenith/dotzenith/blob/main/assets/kolorz/kolorz.png" alt="kolorz">
 
 ---
 
