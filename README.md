@@ -67,9 +67,9 @@ gogh
 Using the kolorz python interface to print colored output:
 
 ```python
-from kolorz import kolorz
+from kolorz import make_kolorz
 
-kl = kolorz()
+kl = make_kolorz()
 
 print(f"{kl.blue}This is some{kl.end} {kl.orange}output{kl.end}")
 ```
@@ -88,7 +88,7 @@ white
 By default, the colorscheme is set to `catppuccin mocha` but that can be changed to any of the colorschemes listed by `kolorz`. For example:
 
 ```python
-from kolorz import kolorz
+from kolorz import make_kolorz
 
 kl = kolorz("nord")
 
@@ -110,7 +110,7 @@ new_colors = {
     "white": (204, 208, 218),
 }
 
-kl = kolorz(custom=new_colors)
+kl = make_kolorz(custom=new_colors)
 
 print(f"{kl.blue}This is some{kl.end} {kl.orange}output{kl.end}")
 ```
@@ -120,15 +120,15 @@ print(f"{kl.blue}This is some{kl.end} {kl.orange}output{kl.end}")
 Adding or overriding a color
 
 ```python
-from kolorz import kolorz
+from kolorz import make_kolorz, make_kolor
 
-kl = kolorz()
+kl = make_kolorz()
 
 # Adding
-kl.set_color("rosewater", (245, 224, 220))
+kl.rosewater = make_kolor((245, 224, 220))
 
 # Overriding
-kl.set_color("blue", (137, 220, 235))
+kl.blue = make_kolor((137, 220, 235))
 
 print(f"{kl.rosewater}This is some{kl.end} {kl.blue}output{kl.end}")
 ```
