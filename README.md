@@ -90,7 +90,7 @@ By default, the colorscheme is set to `catppuccin mocha` but that can be changed
 ```python
 from kolorz import make_kolorz
 
-kl = kolorz("nord")
+kl = make_kolorz("nord")
 
 print(f"{kl.blue}This is some{kl.end} {kl.orange}output{kl.end}")
 ```
