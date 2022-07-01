@@ -39,7 +39,7 @@ pip3 install kolorz
 git clone https://github.com/dotzenith/kolorz.git
 cd kolorz
 poetry build
-pip3 install ./dist/kolorz-0.2.0.tar.gz
+pip3 install ./dist/kolorz-0.2.1.tar.gz
 ```
 
 ### ❖ Usage 
@@ -136,7 +136,7 @@ print(f"{kl.rosewater}This is some{kl.end} {kl.blue}output{kl.end}")
 ---
 
 ### ❖ What's New? 
-0.2.0 - Now using `dotwiz` instead of a custom class
+0.2.1 - Added a utility function to get all available colorschemes
 
 ---
 
