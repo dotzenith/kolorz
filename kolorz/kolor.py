@@ -24,8 +24,10 @@ def make_kolorz(colorscheme: str = "catppuccin mocha", custom: Optional[dict[Any
     if num_colors:
         # I could do a dict comprehension here but not doing so because of readability
         new_kolorz_dict = {}
-        for color_index, color in enumerate(kolorz_dict.values()):
-            if color != kolorz_dict["end"]:
+        for color_index, (color_name, color) in enumerate(kolorz_dict.items()):
+            if color_name == "white" or color_name == "end":
+                new_kolorz_dict[color_name] = color
+            else:
                 new_kolorz_dict[f"color{color_index}"] = color
         
         new_kolorz_dict['end'] = "\033[0m"
