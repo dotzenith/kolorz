@@ -98,7 +98,7 @@ print(f"{kl.blue}This is some{kl.end} {kl.orange}output{kl.end}")
 Users can also define their own colorschemes:
 
 ```python
-from kolorz import kolorz
+from kolorz import make_kolorz
 
 new_colors = {
     "red": (210, 15, 57),
