@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "kolorz"
-version = "0.2.1"
+version = "0.2.2"
 description = "A fast, extensible, and kolorful python library to print colored output to the terminal"
 authors = ["dotzenith <contact@danshu.co>"]
 license = "MIT"
