@@ -38,7 +38,7 @@ def make_kolorz(colorscheme: str = "catppuccin mocha", custom: Optional[dict[Any
 
 def make_kolor(color: tuple) -> str:
     """
-    Wraps the rgp tuple in an escape sequence 
+    Wraps the rgb tuple in an escape sequence 
     """
     return f"\033[38;2;{color[0]};{color[1]};{color[2]}m"
 
