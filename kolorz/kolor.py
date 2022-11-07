@@ -1,11 +1,18 @@
 """
 A library to facilitate printing colored output to terminals
 """
-from kolorz.colors import colors
-from typing import Optional, Any
+from typing import Any, Optional
+
 from dotwiz import DotWiz
 
-def make_kolorz(colorscheme: str = "catppuccin mocha", custom: Optional[dict[Any, Any]] = None, num_colors: bool = False):
+from kolorz.colors import colors
+
+
+def make_kolorz(
+    colorscheme: str = "catppuccin mocha",
+    custom: Optional[dict[Any, Any]] = None,
+    num_colors: bool = False,
+) -> DotWiz:
     """
     Instantiates a custom dotwiz dict with kolorz
 
@@ -17,9 +24,11 @@ def make_kolorz(colorscheme: str = "catppuccin mocha", custom: Optional[dict[Any
         theme = colors[colorscheme]
     else:
         theme = custom
-    
-    kolorz_dict = {color_name: make_kolor(color_value) for color_name, color_value in theme.items()}
-    kolorz_dict['end'] = "\033[0m"
+
+    kolorz_dict = {
+        color_name: make_kolor(color_value) for color_name, color_value in theme.items()
+    }
+    kolorz_dict["end"] = "\033[0m"
 
     if num_colors:
         # I could do a dict comprehension here but not doing so because of readability
@@ -29,18 +38,20 @@ def make_kolorz(colorscheme: str = "catppuccin mocha", custom: Optional[dict[Any
                 new_kolorz_dict[color_name] = color
             else:
                 new_kolorz_dict[f"color{color_index}"] = color
-        
-        new_kolorz_dict['end'] = "\033[0m"
+
+        new_kolorz_dict["end"] = "\033[0m"
 
         return DotWiz(new_kolorz_dict)
 
     return DotWiz(kolorz_dict)
 
+
 def make_kolor(color: tuple) -> str:
     """
-    Wraps the rgb tuple in an escape sequence 
+    Wraps the rgb tuple in an escape sequence
     """
     return f"\033[38;2;{color[0]};{color[1]};{color[2]}m"
+
 
 def get_all_colorschemes() -> list[str]:
     """

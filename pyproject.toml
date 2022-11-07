@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "kolorz"
-version = "0.2.3"
+version = "0.2.4"
 description = "A fast, extensible, and kolorful python library to print colored output to the terminal"
 authors = ["dotzenith <contact@danshu.co>"]
 license = "MIT"
@@ -13,7 +13,9 @@ dotwiz = "^0.3.1"
 [tool.poetry.scripts]
 kolorz = "kolorz.cli:kolor"
 
-[tool.poetry.dev-dependencies]
+[tool.poetry.group.dev.dependencies]
+black = "^22.10.0"
+isort = "^5.10.1"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
